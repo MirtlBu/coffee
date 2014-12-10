@@ -5,6 +5,7 @@
 @color-white: #ffffff;
 @color-brown: #400000;
 
+
 @font-face {
 	font-family: RobotoThin;
 	src: url(../fonts/roboto/Roboto-Thin.ttf);
@@ -91,6 +92,7 @@ a {
 	font-size: 30px;
 	padding: 0 45px;
 }
+
 
 .button--subscribe {
 	font-size: 30px;
@@ -313,6 +315,90 @@ header {
 
 	button {
 		float: right;
+	}
+}
+
+.slider-offer {
+	width: 100%;
+	background: @color-gray-light;
+	padding: 20px 0 0 0;
+
+	.title {
+		font-size: 48px;
+		font-family: RobotoSlabRegular;
+		color: @color-gray-medium;
+		text-align: center;
+		margin: 0 0 50px 0;
+	}
+
+	.slider {
+		background: @color-white;
+		width: 820px;
+		margin: auto;
+
+		&__item {
+			display: inline-block;
+			padding: 30px 20px; 
+
+			& > img {
+				float: left;
+			}
+
+			.description {
+				float: left;
+				margin-left: 25px;
+			}
+
+			.terms {
+				float: left;
+				margin-left: 20px;
+
+				&__item {
+					margin-bottom: 20px;
+				}
+
+				span {
+					font-size: 14px;
+					font-family: RobotoThin;
+					display: inline-block;
+					vertical-align: middle;
+					width: 150px;
+				}
+
+				img {
+					display: inline-block;
+					vertical-align: middle;
+				}
+
+				button {
+					margin-top: 25px;
+				}
+			}
+
+			.name {
+				font-size: 24px;
+				font-family: RobotoSlabRegular;
+				margin-bottom: 40px;
+			}
+
+			li {
+				font-size: 14px;
+				font-family: RobotoThin;
+				position: relative;
+				margin: 0 0 6px 10px;
+			}
+
+			li:before {
+				content: '';
+				position: absolute;
+				width: 5px;
+				height: 5px;
+				border-radius: 50%;
+				top: 7px;
+				left: -9px;
+				background: @color-green;
+			}
+		}
 	}
 }
 
