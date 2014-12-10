@@ -79,7 +79,7 @@ a {
 
 .button {
 	border: 0;
-	height: 55px;
+	height: 52px;
 	background: @color-green;
 	color: @color-white;
 	text-shadow: 0px -1px 2px rgba(0, 0, 0, 0.44);
@@ -90,6 +90,15 @@ a {
 .button--placeorder {
 	font-size: 30px;
 	padding: 0 45px;
+}
+
+.button--subscribe {
+	font-size: 30px;
+	padding: 0 55px;
+}
+
+.clear {
+	clear: both;
 }
 
 header {
@@ -218,10 +227,7 @@ header {
 			margin-top: 35px;
 		}
 	}
-
-	.clear {
-		clear: both;
-	}
+	
 }
 
 .steps {
@@ -284,6 +290,29 @@ header {
 	 			clear: both;
 	 		}
 	 	}
+	}
+}
+
+.subscribe {
+	background: url(../img/coffee-bg.jpg);
+	padding: 25px 0 30px 0;
+
+	input {
+		width: 535px;
+		height: 50px;
+		float: left;
+		padding: 0 15px;
+		font-size: 24px;
+		font-family: RobotoThin;
+		border: 1px solid rgba(0, 0, 0, .4);
+		-webkit-box-shadow: inset -1px 2px 7px 1px rgba(0, 0, 0, 0.63);
+		-moz-box-shadow:    inset -1px 2px 7px 1px rgba(0, 0, 0, 0.63);
+		box-shadow:         inset -1px 2px 7px 1px rgba(0, 0, 0, 0.63);
+		box-sizing: border-box;
+	}
+
+	button {
+		float: right;
 	}
 }
 
