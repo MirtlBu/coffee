@@ -1,4 +1,4 @@
-$(function(){
+$(function() {
 	var ELEMS = ['img-step', 'title', 'info', 'text'];
 	var ADDCLASS = '--clicked';
 	$('.steps__item').on('mouseenter', function(){
@@ -13,5 +13,10 @@ $(function(){
 			$(that).closest('.steps__item').find('.' + val).removeClass(val + ADDCLASS);
 		})
 	});
-
+});
+$(function() {
+	$('button').on('click', function() {
+		var mysorts = sorts;
+		console.log(mysorts.africa[1].url);
+	})
 })
