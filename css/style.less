@@ -11,6 +11,10 @@
 	src: url(../fonts/roboto/Roboto-Thin.ttf);
 }
 @font-face {
+	font-family: RobotoLight;
+	src: url(../fonts/roboto/Roboto-Light.ttf);
+}
+@font-face {
 	font-family: RobotoBold;
 	src: url(../fonts/roboto/Roboto-Bold.ttf);
 }
@@ -84,19 +88,29 @@ a {
 	background: @color-green;
 	color: @color-white;
 	text-shadow: 0px -1px 2px rgba(0, 0, 0, 0.44);
+	font-size: 30px;
 	font-family: RobotoSlabRegular;
 	cursor: pointer;
-}
 
-.button--placeorder {
-	font-size: 30px;
-	padding: 0 45px;
-}
+	&--placeorder {
+		padding: 0 45px;
+	}
 
+	&--subscribe {
+		padding: 0 55px;
+	}
 
-.button--subscribe {
-	font-size: 30px;
-	padding: 0 55px;
+	&--ordernow {
+		height: 61px;
+		padding: 0 55px;
+	}
+
+	&--sorts {
+		padding: 0 45px;
+		position: absolute;
+		right: 20px;
+		bottom: 15px;
+	}
 }
 
 .clear {
@@ -295,9 +309,31 @@ header {
 	}
 }
 
-.subscribe {
+.beanybutton {
 	background: url(../img/coffee-bg.jpg);
 	padding: 25px 0 30px 0;
+
+	&--move {
+		background-position: 50%;
+		padding: 20px 0 0px 0;
+
+	}
+
+	.ordernow {
+		font-size: 30px;
+		font-family: RobotoSlabRegular;
+		color: @color-white;
+		display: inline-block;
+		text-align: right;
+		position: relative;
+		top: -15px;
+
+		span {
+			font-size: 36px;
+			font-family: RobotoSlabBold;
+			color: @color-green;
+		}
+	}
 
 	input {
 		width: 535px;
@@ -399,6 +435,179 @@ header {
 				background: @color-green;
 			}
 		}
+	}
+}
+
+.sorts {
+	.icon {
+		margin-top: 125px;
+
+		&__item {
+			display: inline-block;
+			width: 98px;
+			height: 80px;
+			text-align: center;
+			padding: 20px 0;
+			position: relative;
+
+			&:hover {
+				background: @color-gray-light;
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: -24px;
+					left: 26px;
+					width: 47px;
+					height: 47px;
+					background: @color-gray-light;
+					transform: rotate(45deg) skew(-25deg, -25deg);
+				}
+			}
+		}
+
+		&__text {
+			font-size: 14px;
+			font-family: RobotoSlabLight;
+		}
+	}
+	&__main {
+		background: @color-gray-light;
+		height: 300px;
+		padding: 0 20px;
+		position: relative;
+
+		.image {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.ribbon {
+			width: 187px;
+			height: 50px;
+			padding: 5px 10px;
+			background: @color-green;
+			position: absolute;
+			bottom: 10px;
+			left: 0;
+			font-size: 24px;
+			font-family: RobotoSlabLight;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: -24px;
+				left: 26px;
+				width: 47px;
+				height: 47px;
+				background: darken(@color-green, 20%);
+				transform: rotate(45deg) skew(-25deg, -25deg);
+			}
+
+			img {
+				position: relative;
+				top: 5px;
+				left: 0;
+				float: left;
+			}
+			span {
+				height: 50px;
+				display: inline-block;
+				position: relative;
+				top: -5px;
+				left: 5px;
+			}
+		}
+
+		ul {
+			display: inline-block;
+			vertical-align: top;
+			margin-top: 35px;
+			width: 560px;
+
+			li {
+				border-bottom: 1px solid black;
+				font-size: 18px;
+				font-family: RobotoSlabThin;
+				padding: 7px 0;
+			}
+
+			.sort {
+				display: inline-block;
+				position: relative;
+			}
+
+			.price {
+				display: inline-block;
+				position: relative;
+				right: -340px; 
+			}
+			
+		}
+	}
+}
+
+.discount {
+	text-align: center;
+	padding: 50px 0 25px 0;
+	color: @color-gray-medium;
+
+	.wrap {
+		& > div:not(:last-child) {
+			position: relative;
+			line-height: .8;
+			padding-bottom: 20px;
+		}
+		& > div:not(:first-child) {
+			padding-top: 10px;
+		}
+	}
+
+	.top {
+		font-size: 36px;
+		font-family: RobotoSlabBold;
+		color: @color-green;
+		text-transform: uppercase;
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 230px;
+			height: 1px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			background: @color-green;
+		}
+	}
+
+	.middle {
+		font-size: 36px;
+		font-family: RobotoSlabLight;
+		text-transform: lowercase;
+
+		span {
+			font-size: 24px;
+			font-family: RobotoSlabLight;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 230px;
+			height: 1px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			background: @color-green;
+		}
+	}
+	.bottom {
+		font-size: 18px;
+		font-family: RobotoLight;
 	}
 }
 
