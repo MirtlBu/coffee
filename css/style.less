@@ -92,6 +92,10 @@ a {
 	font-family: RobotoSlabRegular;
 	cursor: pointer;
 
+	&:hover {
+		background: darken(@color-green, 5%);
+	}
+
 	&--placeorder {
 		padding: 0 45px;
 	}
@@ -110,6 +114,10 @@ a {
 		position: absolute;
 		right: 20px;
 		bottom: 15px;
+	}
+
+	&--contacts {
+		padding: 0 35px;
 	}
 }
 
@@ -609,6 +617,123 @@ header {
 		font-size: 18px;
 		font-family: RobotoLight;
 	}
+}
+
+.about {
+	position: relative;
+	padding: 15px 0 65px 0;
+	background: @color-gray-light;
+
+	.title {
+		font-size: 60px;
+		font-family: RobotoSlabLight;
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	img {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+
+	&__left {
+		float: left;
+		font-size: 24px;
+		font-family: RobotoThin;
+		text-align: left;
+		width: 40%;
+	}
+
+	&__right {
+		float: right;
+		font-size: 24px;
+		font-family: RobotoThin;
+		text-align: right;
+		width: 40%;
+
+		div {
+			float: right;
+		}
+	}
+
+	.top {
+		margin-bottom: 55px;
+	}
+
+	.middle {
+		margin-bottom: 55px;
+		width: 70%;
+	}
+	.bottom {
+		
+	}
+}
+
+.contacts {
+	padding-bottom: 35px;
+
+	.title {
+		font-size: 60px;
+		font-family: RobotoSlabLight;
+		text-align: center;
+		margin-bottom: 45px;
+	}
+
+	&__left {
+		float: left;
+
+		img, span {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		div {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+
+		.phone {
+			font-family: RobotoSlabRegular;
+		}
+
+		.mail {
+			font-family: RobotoSlabThin;
+		}
+	}
+
+	&__right {
+		float: right;
+
+		div {
+			font-size: 24px;
+			font-family: RobotoSlabRegular;
+			text-align: center;
+			margin-bottom: 28px;
+		}
+	}
+}
+
+footer {
+	width: 100%;
+	height: 50px;
+	background: @color-gray-dark;
+
+	img {
+		float: left;
+		height: 35px;
+		padding-top: 7px;
+	}
+
+	span {
+		float: right;
+		font-size: 12px;
+		font-family: RobotoRegular;
+		color: @color-white;
+		padding-top: 25px;
+	}
+
 }
 
 
