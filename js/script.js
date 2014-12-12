@@ -23,10 +23,22 @@ $(function() {
 
 
 var BLOCK = 'fotorama',
-ELEM_WRAP = BLOCK + '__wrap',//fotorama__wrap
-ELEM_THUMB = BLOCK + '__thumbs'//fotorama__thumb
+ELEM_WRAP = BLOCK + '__wrap',
+ELEM_THUMB = BLOCK + '__thumbs'
 ELEM_TEMPL = '<div><div class="icon__img"><img src="img/coffeemachine-2.jpg"></div><div class="icon__text">Delonghi ECO 310</div></div>';
+ELEM_ARROW = BLOCK + '__arrow',
+MOD_ARROW_PREV = ELEM_ARROW + '--prev',
+MOD_ARROW_NEXT = ELEM_ARROW + '--next';
 
+function createArrow(mod, showParam) {
+	return $('<div/>', {
+		'class': ELEM_ARROW,
+		tabindex: 0,
+		role: 'button'
+	}).addClass(mod).on('click', function() {
+		$('.fotorama').data('fotorama').show(showParam);
+	});
+}
 
 function createThumb(showParam) {
 	return $(ELEM_TEMPL, {
@@ -48,6 +60,8 @@ $('.fotorama').on('fotorama:ready', function (e, fotorama) {
 		.append(createThumb(5))
 		.append(createThumb(6))
 		.append(createThumb(7))
+		.append(createArrow(MOD_ARROW_PREV, '<'))
+		.append(createArrow(MOD_ARROW_NEXT, '>'));
 }).fotorama({
 	width: 816,
 	height: 380,
@@ -55,10 +69,10 @@ $('.fotorama').on('fotorama:ready', function (e, fotorama) {
 	keyboard: true,
 	swipe: true,
 	transitionduration: 1000,
-	arrows: false,
 	auto: false,
 	spinner: false,
-	nav: false
+	nav: false,
+	arrows: false
 });
 
 
