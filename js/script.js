@@ -14,9 +14,52 @@ $(function() {
 		})
 	});
 });
-$(function() {
-	$('button').on('click', function() {
-		var mysorts = sorts;
-		console.log(mysorts.africa[1].url);
-	})
-})
+// $(function() {
+// 	$('button').on('click', function() {
+// 		var mysorts = sorts;
+// 		console.log(mysorts.africa[1].url);
+// 	})
+// })
+
+
+var BLOCK = 'fotorama',
+ELEM_WRAP = BLOCK + '__wrap',//fotorama__wrap
+ELEM_THUMB = BLOCK + '__thumbs'//fotorama__thumb
+ELEM_TEMPL = '<div><div class="icon__img"><img src="img/coffeemachine-2.jpg"></div><div class="icon__text">Delonghi ECO 310</div></div>';
+
+
+function createThumb(showParam) {
+	return $(ELEM_TEMPL, {
+		'class': ELEM_THUMB,
+		tabindex: 0,
+		role: 'button'
+	}).addClass('icon__item').on('click', function() {
+		$('.fotorama').data('fotorama').show(showParam);
+	});
+}		
+
+$('.fotorama').on('fotorama:ready', function (e, fotorama) {
+  $('.fotorama').find('.fotorama__wrap')
+		.append(createThumb(0))
+		.append(createThumb(1))
+		.append(createThumb(2))
+		.append(createThumb(3))
+		.append(createThumb(4))
+		.append(createThumb(5))
+		.append(createThumb(6))
+		.append(createThumb(7))
+}).fotorama({
+	width: 816,
+	height: 380,
+	loop: true,
+	keyboard: true,
+	swipe: true,
+	transitionduration: 1000,
+	arrows: false,
+	auto: false,
+	spinner: false,
+	nav: false
+});
+
+
+
