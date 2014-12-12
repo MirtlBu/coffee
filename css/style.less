@@ -286,6 +286,7 @@ header {
 	 		position: relative;
 
 	 		&--clicked {
+	 			width: 175px;
 	 			display: inline-block;
 	 			font-size: 18px;
 	 			padding: 0;
@@ -365,7 +366,7 @@ header {
 .slider-offer {
 	width: 100%;
 	background: @color-gray-light;
-	padding: 20px 0 0 0;
+	padding: 20px 0 25px 0;
 
 	.title {
 		font-size: 48px;
@@ -375,14 +376,64 @@ header {
 		margin: 0 0 50px 0;
 	}
 
-	.slider {
-		background: @color-white;
-		width: 820px;
+	.fotorama__wrap {
 		margin: auto;
+		height: 535px;
+	}
+
+	.slider {
+		
+		.icon__item {
+			display: inline-block;
+			width: 92px;
+			height: 126px;
+			text-align: center;
+			padding: 10px 5px 0 5px;
+			position: relative;
+			background: @color-gray-light;
+			cursor: pointer;
+
+			&:hover {
+				background: @color-white;
+
+				&:before {
+					content: '';
+					position: absolute;
+					bottom: -24px;
+					left: 27px;
+					width: 49px;
+					height: 49px;
+					background: @color-white;
+					transform: rotate(225deg) skew(-25deg, -25deg);
+					z-index: -1;
+				}
+			}
+		}
+
+		.icon__img {
+			width: 87px;
+			height: 87px;
+			border-radius: 50%;
+			background: @color-white;
+
+			img {
+				width: 50px;
+				height: 60px;
+				padding-top: 15px;
+			}
+		}
+
+		.icon__text {
+			font-size: 14px;
+			font-family: RobotoSlabLight;
+		}
 
 		&__item {
+			width: 822px;
+			margin: 0 auto;
 			display: inline-block;
-			padding: 30px 20px; 
+			padding: 30px 20px;
+			background: @color-white; 
 
 			& > img {
 				float: left;
@@ -457,6 +508,7 @@ header {
 			text-align: center;
 			padding: 20px 0;
 			position: relative;
+			cursor: pointer;
 
 			&:hover {
 				background: @color-gray-light;
@@ -734,6 +786,13 @@ footer {
 		padding-top: 25px;
 	}
 
+}
+
+.navthumbs {
+	width: 30px;
+	height: 30px;
+	background: red;
+	display: inline-block;
 }
 
 
