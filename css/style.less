@@ -381,9 +381,35 @@ header {
 		height: 535px;
 	}
 
+	.fotorama__arrow {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		top: 35%;
+		transform: translateY(-50%);
+		position: absolute;
+		outline: none;
+		cursor: pointer;
+
+		&:hover {
+			background-color: darken(@color-green, 5%);
+		}
+	}
+
+	.fotorama__arrow--prev {
+		left: -60px;
+		background: @color-green url(../img/arrow-left.png) center center no-repeat;
+	}
+
+	.fotorama__arrow--next {
+		right: -60px;
+		background-image: url(../img/arrow-right.png);
+		background: @color-green url(../img/arrow-right.png) center center no-repeat;
+	}
+
 	.slider {
 		
-		.icon__item {
+		.icon {
 			display: inline-block;
 			width: 92px;
 			height: 126px;
@@ -392,6 +418,7 @@ header {
 			position: relative;
 			background: @color-gray-light;
 			cursor: pointer;
+			outline: none;
 
 			&:hover {
 				background: @color-white;
@@ -463,6 +490,7 @@ header {
 				img {
 					display: inline-block;
 					vertical-align: middle;
+					margin-right: 10px;
 				}
 
 				button {
@@ -499,7 +527,7 @@ header {
 
 .sorts {
 	.icon {
-		margin-top: 125px;
+		margin-top: 100px;
 
 		&__item {
 			display: inline-block;
