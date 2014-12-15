@@ -538,7 +538,7 @@ header {
 			position: relative;
 			cursor: pointer;
 
-			&:hover {
+			&-active {
 				background: @color-gray-light;
 
 				&:before {
@@ -569,6 +569,7 @@ header {
 			position: relative;
 			display: inline-block;
 			vertical-align: middle;
+			z-index: 0;
 		}
 
 		.ribbon {
@@ -585,19 +586,19 @@ header {
 			&:before {
 				content: '';
 				position: absolute;
-				top: -24px;
+				top: -23px;
 				left: 26px;
 				width: 47px;
 				height: 47px;
-				background: darken(@color-green, 20%);
+				background: #3C8C79;
 				transform: rotate(45deg) skew(-25deg, -25deg);
+				z-index: -1;
 			}
 
 			img {
 				position: relative;
 				top: 5px;
 				left: 0;
-				float: left;
 			}
 			span {
 				height: 50px;
@@ -628,8 +629,11 @@ header {
 
 			.price {
 				display: inline-block;
-				position: relative;
-				right: -340px; 
+				float: right;
+
+				span:first-child {
+					font-family: RobotoSlabBold;
+				}
 			}
 			
 		}
