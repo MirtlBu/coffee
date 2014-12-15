@@ -70,4 +70,42 @@ $(function() {
 	
 });
 
+function changeContent(array, elem_id) {
+	$('.sorts__main').find('li').remove();
+	$.map(array, function(val, i) {
+		if (array[i]._id == elem_id) {
+			$('.ribbon').find('img').attr('src', array[i].url);
+			$('.ribbon').find('span').text(array[i].country);
+			for(var j = 0; j < array[i].items.length; j++) {
+				console.log(renderList(array[i].items[j]));
+				$('.sorts__main').find('ul').append(renderList(array[i].items[j]));
+			}
+		} 
+	});
+}
+
+$(function() {
+	var arrayOfSorts = sorts;
+	for (var i = 0; i < 10; i++) {
+		$('.sorts').find('.icon').append(
+			renderSorts(arrayOfSorts[i])
+		);
+	}
+	$('#sort_1').addClass('icon__item-active');
+	changeContent(arrayOfSorts, 'sort_1');
+
+	
+
+	$('.icon').on('click', '.icon__item', function() {
+		var _id = $(this).attr('id');
+		$('.icon__item').removeClass('icon__item-active');
+		$(this).addClass('icon__item-active');
+		changeContent(arrayOfSorts, _id);
+	});
+	
+});
+
+
+
+
 
