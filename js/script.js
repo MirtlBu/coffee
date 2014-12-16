@@ -105,6 +105,14 @@ $(function() {
 	
 });
 
+$(window).scroll(function(){
+    if ($(window).scrollTop()>$("header").height()){
+        $(".sticky-header").addClass("es-stickly");//назначаем класс
+    } else {
+        $(".sticky-header").removeClass("es-stickly");
+    }
+});
+
 
 
 
