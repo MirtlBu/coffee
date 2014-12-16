@@ -15,10 +15,6 @@
 	src: url(../fonts/roboto/Roboto-Light.ttf);
 }
 @font-face {
-	font-family: RobotoBold;
-	src: url(../fonts/roboto/Roboto-Bold.ttf);
-}
-@font-face {
 	font-family: RobotoRegular;
 	src: url(../fonts/roboto/Roboto-Regular.ttf);
 }
@@ -37,14 +33,6 @@
 @font-face {
 	font-family: RobotoSlabThin;
 	src: url(../fonts/Roboto_Slab/RobotoSlab-Thin.ttf);
-}
-@font-face {
-	font-family: OpenSansBold;
-	src: url(../fonts/Open_Sans/OpenSans-Bold.ttf);
-}
-@font-face {
-	font-family: OpenSansRegular;
-	src: url(../fonts/Open_Sans/OpenSans-Regular.ttf);
 }
 @font-face {
 	font-family: OpenSansLight;
@@ -310,6 +298,10 @@ header {
 	 		font-family: OpenSansLight;
 	 		text-align: left;
 
+	 		.continue {
+	 			color: @color-green;
+	 		}
+
 	 		&--clicked {
 	 			display: block;
 	 			clear: both;
@@ -469,6 +461,7 @@ header {
 			.description {
 				float: left;
 				margin-left: 25px;
+				width: 245px;
 			}
 
 			.terms {
