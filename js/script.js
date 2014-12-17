@@ -66,14 +66,17 @@ $(function() {
 		.append(createSwitcher([ELEM_ARROW, MOD_ARROW_NEXT].join(' '), '>'))
 		.on('click', '.' + ELEM_SWITCHER, function() {
 			$fotorama.data('fotorama').show($(this).data('show-param'));
-			var index = $fotorama.data('fotorama').activeIndex;
-			var elem = $('[data-index=' + index + ']');
-			$('.' + ELEM_SWITCHER).removeClass('active');
-			$(elem).addClass('active');
-			
+			addActive($fotorama.data('fotorama'));
 		});
-	
+	addActive($fotorama.data('fotorama'));
 });
+
+function addActive(data) {
+	var index = data.activeIndex;
+	var elem = $('[data-index=' + index + ']');
+	$('.' + ELEM_SWITCHER).removeClass('active');
+	$(elem).addClass('active');
+}
 
 function changeContent(array, elem_id) {
 	$('.sorts__main').find('li').remove();
