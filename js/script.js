@@ -29,7 +29,7 @@ ICON_TEXT = ICON + '__text';
 
 
 function createSwitcher(className, showParam, content) {
-	return $('<div/>', {'class': className, tabindex: 0, role: 'button'})
+	return $('<div/>', {'class': className, tabindex: 0, role: 'button', 'data-index': showParam})
 		.addClass(ELEM_SWITCHER)
 		.data('show-param', showParam)
 		.append(content);
@@ -66,6 +66,11 @@ $(function() {
 		.append(createSwitcher([ELEM_ARROW, MOD_ARROW_NEXT].join(' '), '>'))
 		.on('click', '.' + ELEM_SWITCHER, function() {
 			$fotorama.data('fotorama').show($(this).data('show-param'));
+			var index = $fotorama.data('fotorama').activeIndex;
+			var elem = $('[data-index=' + index + ']');
+			$('.' + ELEM_SWITCHER).removeClass('active');
+			$(elem).addClass('active');
+			
 		});
 	
 });
@@ -77,7 +82,6 @@ function changeContent(array, elem_id) {
 			$('.ribbon').find('img').attr('src', array[i].url);
 			$('.ribbon').find('span').text(array[i].country);
 			for(var j = 0; j < array[i].items.length; j++) {
-				console.log(renderList(array[i].items[j]));
 				$('.sorts__main').find('ul').append(renderList(array[i].items[j]));
 			}
 		} 

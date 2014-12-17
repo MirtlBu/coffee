@@ -413,19 +413,39 @@ header {
 			cursor: pointer;
 			outline: none;
 
+			&:before {
+				content: '';
+				position: absolute;
+				bottom: -24px;
+				left: 27px;
+				width: 49px;
+				height: 49px;
+				background: transparent;
+				transform: rotate(225deg) skew(-25deg, -25deg);
+				z-index: -1;
+			}
+
+			&:hover {
+				background: lighten(@color-gray-light, 5%);
+
+				&:before {
+					background: lighten(@color-gray-light, 5%);
+				}
+			}
+		}
+
+		.active {
+			background: @color-white;
+
+			&:before {
+				background: @color-white;
+			}
+
 			&:hover {
 				background: @color-white;
 
 				&:before {
-					content: '';
-					position: absolute;
-					bottom: -24px;
-					left: 27px;
-					width: 49px;
-					height: 49px;
 					background: @color-white;
-					transform: rotate(225deg) skew(-25deg, -25deg);
-					z-index: -1;
 				}
 			}
 		}
@@ -532,19 +552,39 @@ header {
 			position: relative;
 			cursor: pointer;
 
+			&:before {
+				content: '';
+				position: absolute;
+				top: -24px;
+				left: 26px;
+				width: 47px;
+				height: 47px;
+				background: transparent;
+				transform: rotate(45deg) skew(-25deg, -25deg);
+			}
+
+			&:hover {
+				background: lighten(@color-gray-light, 5%);
+
+				&:before {
+					background: lighten(@color-gray-light, 5%);
+				}
+			}
+
 			&-active {
 				background: @color-gray-light;
 
 				&:before {
-					content: '';
-					position: absolute;
-					top: -24px;
-					left: 26px;
-					width: 47px;
-					height: 47px;
 					background: @color-gray-light;
-					transform: rotate(45deg) skew(-25deg, -25deg);
 				}
+
+				&:hover {
+				background: @color-gray-light;
+
+				&:before {
+					background: @color-gray-light;
+				}
+			}
 			}
 		}
 
