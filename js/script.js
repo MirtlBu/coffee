@@ -113,10 +113,10 @@ $(function() {
 });
 
 $(window).scroll(function(){
-    if ($(window).scrollTop()>$("header").height()){
-        $(".sticky-header").addClass("es-stickly");//назначаем класс
+    if ($(window).scrollTop() > $("header").height()){
+        $(".sticky-header").addClass("sticky");//назначаем класс
     } else {
-        $(".sticky-header").removeClass("es-stickly");
+        $(".sticky-header").removeClass("sticky");
     }
 });
 
