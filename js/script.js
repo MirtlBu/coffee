@@ -122,10 +122,17 @@ $(window).scroll(function(){
     }
 });
 
-$('button').on('click', function(e) {
-	debugger;
-	e.stopPropagation();
-})
+// $('.slider').on('click', '.button--slider', function(e) {
+// 	console.log(this);
+// 	e.stopPropagation();
+// })
+
+// $(function() {
+// 	$('.button--slider').unbind('click');
+// })
+
+
+
 
 
 
