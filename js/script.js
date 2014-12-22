@@ -115,10 +115,17 @@ $(function() {
 $(window).scroll(function(){
     if ($(window).scrollTop() > $("header").height()){
         $(".sticky-header").addClass("sticky");//назначаем класс
+        $('header').css('margin-bottom', 44 + 'px');
     } else {
         $(".sticky-header").removeClass("sticky");
+        $('header').css('margin-bottom', 0 + 'px');
     }
 });
+
+$('button').on('click', function(e) {
+	debugger;
+	e.stopPropagation();
+})
 
 
 
