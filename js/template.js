@@ -153,7 +153,7 @@ function renderMachine(machine) {
 			.append($('<div/>', {'class': 'terms__item'})
 				.append($('<img/>', {src: "img/kg-icon.png"}))
 				.append($('<span>От 2,5 кг в месяц</span>')))
-			.append($('<button/>', {'class': 'button button--placeorder'}).text('Заказать')));
+			.append($('<button/>', {'class': 'button button--placeorder button--slider'}).text('Заказать')));
 }
 
 function renderSorts(sort) {
